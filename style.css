@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(213, 224, 238);
+}
+
+.container {
+  width: 900px;
+  padding: 32px;
+  border-radius: 30px;
+  background: rgb(249, 247, 247);
+  position: relative;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.header .logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.header .logo-wrapper .logo {
+  height: 55px;
+  width: 56px;
+  display: flex;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: rgb(138, 138, 233);
+  justify-content: center;
+  align-items: center;
+
+}
+
+.header .logo-wrapper h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.header .theme-toggle {
+  height: 43px;
+  width: 43px;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  cursor: pointer;
+  display: flex;
+  color: rgb(15, 14, 14);
+  align-items: center;
+  justify-content: center;
+  background: rgb(194, 200, 215);
+  border: 2px solid rgb(138, 138, 233);
+  transition: all 0.3s ease;
+}
+
+.header .theme-toggle:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  margin: 35px 0px 5px;
+}
+
+.main-content .prompt-container {
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.main-content .prompt-input {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  min-height: 120px;
+  padding: 16px 20px;
+  border-radius: 15px;
+  background: rgb(213, 224, 238);
+
+}
+
+.main-content .prompt-input:focus {
+  border-color: rgb(178, 180, 228);
+  outline: none;
+  box-shadow: 0 0 0 4px rgb(101, 103, 159);
+  outline: none;
+
+}
+
+.prompt-container .prompt-btn {
+  position: absolute;
+  right: 15px;
+  bottom: 35px;
+  height: 35px;
+  width: 35px;
+  border: none;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgb(138, 138, 233);
+  ;
+}
+
+.prompt-container .prompt-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.main-content .prompt-action {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1.2fr 1fr 1.1fr 1fr;
+}
+
+
+
+.prompt-actions .select-wrapper {
+  position: relative;
+}
+
+.prompt-actions .select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.prompt-action :where(.custom-select, .generate-btn) {
+  cursor: pointer;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: rgb(213, 224, 238);
+
+  border: 1px solid rgb(101, 103, 159);
+
+}
+
+.prompt-action .custom-select {
+  width: 100%;
+  outline: none;
+  height: 100%;
+  appearance: none;
+
+}
+
+.prompt-action .generate-btn:hover {
+  transform: translate(-2px);
+  box-shadow: 0 4px 10px;
+}
+
+.prompt-action .generate-btn {
+  display: flex;
+  gap: 12px;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  background: rgb(138, 138, 233);
+
+}
+
+.main-content .gallery-grid {
+  display: grid;
+  gap: 15px;
+  margin-top: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.gallery-grid .img-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  background: rgb(213, 224, 238);
+  border: 1px solid black;
+}
+
+.gallery-grid .img-card .img-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+
+.gallery-grid .img-card .img-download-btn {
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.gallery-grid .img-card .img-download-btn:hover {
+  opacity: 1;
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.4);
+}
